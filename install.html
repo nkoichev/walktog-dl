@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Инсталиране на WalkTog</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .dl{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px 20px;border-radius:16px;background:linear-gradient(160deg,var(--brand),var(--brand-dark));color:#fff;font-size:19px;font-weight:700;text-decoration:none;box-shadow:0 6px 0 var(--brand-dark)}
+  .dl:active{transform:translateY(4px);box-shadow:0 2px 0 var(--brand-dark)}
+  .dl small{font-weight:500;opacity:.85;font-size:14px}
+  .secondary{display:block;text-align:center;margin:14px 0 0;padding:12px;border:1.5px solid var(--border);border-radius:14px;color:var(--text);text-decoration:none;font-weight:600}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  .steps li{counter-increment:s;position:relative;padding:14px 16px 14px 56px;margin-bottom:10px;background:var(--surface);border:1px solid var(--border);border-radius:14px}
+  .steps li::before{content:counter(s);position:absolute;left:14px;top:13px;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .steps b{display:block;margin-bottom:2px}
+  .steps span{color:var(--text-secondary);font-size:15px}
+  .note{font-size:14px;color:var(--text-secondary);margin-top:6px}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 16px;margin-bottom:10px}
+  summary{font-weight:600;cursor:pointer}
+  details p{margin:8px 0 0;color:var(--text-secondary);font-size:15px}
+  .android-only{display:none}
+  .is-android .android-only{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="6" r="2.4" fill="#fff"/><path d="M13 21l1.6-6.4L18 13l-1-4-3.4 1-2.1-2.6-3.8 1.2L6 12l2.5 1.2L7 21" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18.5" cy="18.5" r="2.2" fill="#ff8f63"/></svg></div>
+    <span class="brand-name">WALK TOGETHER · WALKTOG</span>
+  </header>
+
+  <h1>Инсталирай WalkTog на Android</h1>
+  <p class="intro" style="margin-bottom:24px;padding-bottom:24px">Инсталира се върху старата версия — групите и данните ти остават.</p>
+
+  <a class="dl" href="https://github.com/nkoichev/walktog-dl/releases/download/latest-apk/walktog.apk" download="walktog.apk">
+    ⬇ Изтегли WalkTog <small>APK · ~81 MB</small>
+  </a>
+  <a class="secondary android-only" href="intent:#Intent;action=android.intent.action.VIEW_DOWNLOADS;end">📂 Изтеглих го — отвори „Изтегляния“</a>
+
+  <section style="margin-top:32px">
+    <h2>Стъпки</h2>
+    <ol class="steps">
+      <li><b>Натисни „Изтегли WalkTog“</b><span>Ако Chrome пита „Файлът може да е опасен“ — избери „Изтегли въпреки това“.</span></li>
+      <li><b>Отвори файла, когато свърши</b><span>Натисни „Отвори“ в лентата долу или в известието. Ако няма такъв бутон — натисни „📂 Изтеглих го — отвори Изтегляния“ по-горе (или в Chrome: ⋮ → Изтегляния) и докосни <b style="display:inline">walktog.apk</b>.</span></li>
+      <li><b>Разреши инсталирането</b><span>Първия път телефонът пита за „Инсталиране на неизвестни приложения“. Натисни „Настройки“, включи разрешението за Chrome (или „Файлове“) и се върни назад.</span></li>
+      <li><b>Натисни „Инсталирай“ / „Актуализирай“</b><span>Ако Play Protect покаже предупреждение — „Още подробности“ → „Инсталирай въпреки това“.</span></li>
+    </ol>
+    <p class="note">След това повечето промени идват сами при отваряне на приложението — нов APK е нужен рядко.</p>
+  </section>
+
+  <section>
+    <h2>Ако нещо не става</h2>
+    <details><summary>Изтегли се, но нищо не се отваря</summary><p>Отвори приложението „Файлове“ (Files by Google или „Моите файлове“ на Samsung) → „Изтеглени“ → докосни walktog.apk. Ако там има няколко (walktog (1).apk…), избери най-новия.</p></details>
+    <details><summary>„Приложението не е инсталирано“ или „Грешка при анализа на пакета“</summary><p>Файлът е изтеглен непълно. Изтрий го от „Изтеглени“ и го изтегли отново на стабилен Wi-Fi.</p></details>
+    <details><summary>Няма бутон „Инсталирай“</summary><p>Настройки → Приложения → Специален достъп → „Инсталиране на неизвестни приложения“ → Chrome (или „Файлове“) → Разреши. После отвори файла пак.</p></details>
+  </section>
+
+  <footer><a href="privacy.html">Privacy Policy</a> · <a href="privacy-bg.html">Поверителност</a></footer>
+</div>
+<script>
+  if (/android/i.test(navigator.userAgent)) document.documentElement.classList.add('is-android');
+</script>
+</body>
+</html>
