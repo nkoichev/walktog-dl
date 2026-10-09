@@ -9,6 +9,8 @@
   .dl{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px 20px;border-radius:16px;background:linear-gradient(160deg,var(--brand),var(--brand-dark));color:#fff;font-size:19px;font-weight:700;text-decoration:none;box-shadow:0 6px 0 var(--brand-dark)}
   .dl:active{transform:translateY(4px);box-shadow:0 2px 0 var(--brand-dark)}
   .dl small{font-weight:500;opacity:.85;font-size:14px}
+  .ver{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;margin:12px 0 0;font-size:14px;color:var(--text-secondary)}
+  .ver strong{color:var(--text)}
   .secondary{display:block;text-align:center;margin:14px 0 0;padding:12px;border:1.5px solid var(--border);border-radius:14px;color:var(--text);text-decoration:none;font-weight:600}
   .steps{counter-reset:s;list-style:none;padding:0;margin:0}
   .steps li{counter-increment:s;position:relative;padding:14px 16px 14px 56px;margin-bottom:10px;background:var(--surface);border:1px solid var(--border);border-radius:14px}
@@ -34,8 +36,9 @@
   <p class="intro" style="margin-bottom:24px;padding-bottom:24px">Инсталира се върху старата версия — групите и данните ти остават.</p>
 
   <a class="dl" href="https://github.com/nkoichev/walktog-dl/releases/download/latest-apk/walktog.apk" download="walktog.apk">
-    ⬇ Изтегли WalkTog <small>APK · ~81 MB</small>
+    ⬇ Изтегли WalkTog <small>APK · <span data-apk="size">~84 MB</span></small>
   </a>
+  <p class="ver"><span>Версия <strong data-apk="version">1.3.0</strong></span><span>Издадена на <strong data-apk="date">8 октомври 2026 г.</strong></span></p>
   <a class="secondary android-only" href="intent:#Intent;action=android.intent.action.VIEW_DOWNLOADS;end">📂 Изтеглих го — отвори „Изтегляния“</a>
 
   <section style="margin-top:32px">
@@ -58,6 +61,7 @@
 
   <footer><a href="privacy.html">Privacy Policy</a> · <a href="privacy-bg.html">Поверителност</a></footer>
 </div>
+<script src="apk-info.js"></script>
 <script>
   if (/android/i.test(navigator.userAgent)) document.documentElement.classList.add('is-android');
 </script>
